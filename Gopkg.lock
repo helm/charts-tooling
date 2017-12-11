@@ -45,6 +45,36 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/shurcooL/githubql"
+  packages = ["."]
+  revision = "9c1b9ad05045bfb645e04c4f49da9c6aa15176f1"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/shurcooL/go"
+  packages = ["ctxhttp"]
+  revision = "004faa6b0118cf52635363b72b51cdcc297800a2"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/shurcooL/graphql"
+  packages = [".","ident","internal/jsonutil"]
+  revision = "d0549edd16dceb6939e538fdb1b4f2ec7ee816cc"
+
+[[projects]]
+  name = "github.com/sirupsen/logrus"
+  packages = ["."]
+  revision = "d682213848ed68c0a260ca37d6dd5ace8423f5ba"
+  version = "v1.0.4"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/crypto"
+  packages = ["ssh/terminal"]
+  revision = "94eea52f7b742c7cbe0b03b22f0c4c8631ece122"
+
+[[projects]]
+  branch = "master"
   name = "golang.org/x/net"
   packages = ["context","context/ctxhttp"]
   revision = "dc871a5d77e227f5bbf6545176ef3eeebf87e76e"
@@ -54,6 +84,12 @@
   name = "golang.org/x/oauth2"
   packages = [".","internal"]
   revision = "6a2004c8907a86949d71c664c81574897a4e55a6"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/sys"
+  packages = ["unix","windows"]
+  revision = "53aa286056ef226755cd898109dbcdaba8ac0b81"
 
 [[projects]]
   name = "google.golang.org/appengine"
@@ -79,9 +115,15 @@
   revision = "8478fb4fc723885b155c924d1c8c410b7a9444e6"
   version = "v2.7.2"
 
+[[projects]]
+  branch = "master"
+  name = "k8s.io/test-infra"
+  packages = ["prow/github"]
+  revision = "311ea00cb60bbd7fb4fc5d0682b77649becb7f1c"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "6f4494af20fbc6334aaca6846f1b8f5103706c35da3f66446e6bc6d07f372ec6"
+  inputs-digest = "289443b106ca71b013916dd5d786c6b15642bcdbd9384229ac1f13eb1265a37b"
   solver-name = "gps-cdcl"
   solver-version = 1
