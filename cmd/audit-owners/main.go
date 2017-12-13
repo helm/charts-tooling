@@ -70,6 +70,11 @@ func main() {
 		}
 
 		name := info.Name()
+
+		if name == ".git" {
+			return filepath.SkipDir
+		}
+
 		if name == "OWNERS" {
 			// found an OWNERS file. Process it.
 			y, e2 := readOwners(path)
