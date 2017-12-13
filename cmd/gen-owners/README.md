@@ -12,6 +12,7 @@ This utility generates an OWNERS file for a chart
   `Chart.yaml` file.
 * `-i`: If the `OWNERS` file should be appended to the bottom of the `.helmignore`
   file.
+* `-b`: If _bitnami-bot_ is found in the OWNERS file add real people from Bitnami
 
 Example usage:
 

@@ -44,10 +44,14 @@ var writeOwners bool
 // If the helmignore should have OWNERS appended to it
 var updateHelmIgnore bool
 
+// If bitnami-bot is found in a list add real people from Bitnami as well
+var handleBitnami bool
+
 func init() {
 	flag.StringVar(&chartYaml, "c", "Chart.yaml", "Location of the Chart.yaml file")
 	flag.BoolVar(&writeOwners, "o", false, "If the OWNERS file should be written")
 	flag.BoolVar(&updateHelmIgnore, "i", false, "If the OWNERS file should be appended to .helmignore")
+	flag.BoolVar(&handleBitnami, "b", false, "Handle the bitnami-bot by adding real people at Bitnami")
 }
 
 func main() {
@@ -99,6 +103,20 @@ func main() {
 			if n != "" {
 				ownrs.Approvers = append(ownrs.Approvers, n)
 				ownrs.Reviewers = append(ownrs.Reviewers, n)
+			}
+		}
+	}
+
+	if handleBitnami {
+		for _, v := range ownrs.Approvers {
+			if v == "bitnami-bot" {
+				ownrs.Approvers = append(ownrs.Approvers, "prydonius", "tompizmor", "sameersbn")
+			}
+		}
+
+		for _, v := range ownrs.Reviewers {
+			if v == "bitnami-bot" {
+				ownrs.Reviewers = append(ownrs.Reviewers, "prydonius", "tompizmor", "sameersbn")
 			}
 		}
 	}
